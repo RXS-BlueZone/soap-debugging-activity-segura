@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:bk="http://example.com/books">
+    <soapenv:Header/>
+    <soapenv:Body>
+        <bk:GetBooksResponse>
+            <bk:Book>
+                <bk:Title>The Great Gatsby</bk:Title>
+                <bk:Author>F. Scott Fitzgerald</bk:Author>
+                <bk:Year>1925</bk:Year>
+            </bk:Book>
+            <bk:Book>
+                <bk:Title>1984</bk:Title>
+                <bk:Author>George Orwell</bk:Author>
+                <bk:Year>1949</bk:Year>
+            </bk:Book>
+            <bk:Book>
+                <bk:Title>The Lord of the Rings</bk:Title>
+                <bk:Author>J.R.R. Tolkien</bk:Author>
+                <bk:Year>1954</bk:Year>
+            </bk:Book>
+            <bk:Book>
+                <bk:Title>The Hobbit</bk:Title>
+                <bk:Author>J.R.R. Tolkien</bk:Author>
+                <bk:Year>1937</bk:Year>
+            </bk:Book>
+        </bk:GetBooksResponse>
+    </soapenv:Body>
+</soapenv:Envelope>
