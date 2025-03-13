@@ -1,10 +1,10 @@
 <?php
 
 $soapRequestXML = '<?xml version="1.0" encoding="UTF-8"?>
-<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope">
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
     <soap:Body>
         <getMessage>
-            <name>Doane BSIT - 2028</name>
+            <name>Paul BSIT - 2028</name>
         </getMessage>
     </soap:Body>
 </soap:Envelope>';
