@@ -1,21 +1,31 @@
 <?php
 
 /*
+ * ENHANCEMENTS MADE:
+ * The original code used direct XML parsing to get the author name.
+ * In this enhancement, PHP's SoapServer (SoapClient) is used to automatically handle the SOAP envelope, namespaces, and response.
+ *
  * INITIAL PROBLEM ENCOUNTERED:
  * The original code attempted to use an XPath query with the prefix "soap" (//soap:Body/name)
  * to locate the <name> element in the SOAP body.
  * However, the incoming XML defines the SOAP envelope with the prefix "soapenv"
  * (as declared in: xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/").
- * This caused the XPath query to fail (returning false), leading to the error
- * "Undefined namespace prefix" and subsequent warnings.
+ * This caused the XPath query to fail (returning false) and led to "Undefined namespace prefix" errors.
  *
  * FIX:
- * Register the correct namespace prefix ("soapenv") from the incoming XML and update the XPath query accordingly.
+ * Registered the correct namespace prefix ("soapenv") from the XML and updated the query.
  */
 
 class BookSearch {
-    // Mthod for accepting author name as input and searching for books.
-    public function getBooks($name) {
+    // Method for accepting an author name as input and searching for books.
+    public function getBooks($params) {
+        // To get the 'name' key from array.
+        if (is_array($params) && isset($params['name'])) {
+            $name = $params['name'];
+        } else {
+            $name = $params;
+        }
+        
         $name = trim(strtolower($name));
         
         // Load the library XML file which contains the books
@@ -64,18 +74,8 @@ class BookSearch {
     }
 }
 
-// SoapServer in non-WSDL mode with the appropriate options
 $options = array('uri' => 'http://localhost/soap');
 $server = new SoapServer(null, $options);
 $server->setClass("BookSearch");
 $server->handle();
-
-
-/*
- * ENHANCEMENTS MADE:
- * The original code used a direct XML parsing approach to extract the author name from the SOAP request.
- * Instead of manually parsing and constructing XML, PHP's SoapServer is used here to automatically handle the SOAP envelope,
- * namespaces, and response.
-*/
-
 ?>

@@ -1,6 +1,6 @@
 <?php
-// File: client.php is being used to test the SOAP server by sending a request directly without a form to display the response.
-// Using PHP's built-in SoapClient for a more robust SOAP approach using an array
+// File: client.php is just used for testing so I did not improve its design.
+// Using PHP's built-in SoapClient for a more robust SOAP approach using an array.
 $options = array(
     'location' => "http://localhost/soap/server.php",
     'uri' => "http://localhost/soap",

@@ -1,4 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
+
+<!-- ENHANCEMENTS MADE: Added more books to the library.xml file -->
+
 <soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:bk="http://example.com/books">
     <soapenv:Header/>
     <soapenv:Body>
@@ -22,6 +25,31 @@
                 <bk:Title>The Hobbit</bk:Title>
                 <bk:Author>J.R.R. Tolkien</bk:Author>
                 <bk:Year>1937</bk:Year>
+            </bk:Book>
+            <bk:Book>
+                <bk:Title>To Kill a Mockingbird</bk:Title>
+                <bk:Author>Harper Lee</bk:Author>
+                <bk:Year>1960</bk:Year>
+            </bk:Book>
+            <bk:Book>
+                <bk:Title>One Hundred Years of Solitude</bk:Title>
+                <bk:Author>Gabriel García Márquez</bk:Author>
+                <bk:Year>1967</bk:Year>
+            </bk:Book>
+            <bk:Book>
+                <bk:Title>Pride and Prejudice</bk:Title>
+                <bk:Author>Jane Austen</bk:Author>
+                <bk:Year>1813</bk:Year>
+            </bk:Book>
+            <bk:Book>
+                <bk:Title>War and Peace</bk:Title>
+                <bk:Author>Leo Tolstoy</bk:Author>
+                <bk:Year>1869</bk:Year>
+            </bk:Book>
+            <bk:Book>
+                <bk:Title>Crime and Punishment</bk:Title>
+                <bk:Author>Fyodor Dostoevsky</bk:Author>
+                <bk:Year>1866</bk:Year>
             </bk:Book>
         </bk:GetBooksResponse>
     </soapenv:Body>
